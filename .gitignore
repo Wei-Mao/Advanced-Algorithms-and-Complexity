@@ -1,0 +1,13 @@
+*.out
+*.cs
+*.hs
+*.java
+*.js
+*.kt
+*.rb
+*.rs
+*.scala
+*.swo
+*.swp
+
+
