@@ -1,5 +1,5 @@
 # Advanced Algorithms and Complexity 
-Programming Assignments in C++ for **Advanced Algorithms and Complexity** by Coursera.
+Solutions for Programming Assignments in C++ for **Advanced Algorithms and Complexity** on Coursera.
 
 ## Week 1 Flows in Networks
 [1 Problem: Evacuating People](https://github.com/Wei-Mao/Advanced-Algorithms-and-Complexity/tree/master/Week%201%20Flows%20in%20Networks/evacuation)
