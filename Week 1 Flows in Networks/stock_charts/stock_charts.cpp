@@ -1,4 +1,8 @@
 #include <iostream>
+#include <cstdio>  // freopen
+#include <fstream> // std::ifstream
+#include <sstream> // std::istringstream
+
 #include <vector>
 #include <queue>
 #include <stack>
@@ -227,7 +231,7 @@ class Network
       }
     }
 
-    void print_result()
+    int print_result()
     {
       graph_construct(); //  construct augmented bipartite graph.
       Edmonds_Karp();    //  Find the maxflow
@@ -243,14 +247,70 @@ class Network
 	}
       }
 
-      cout << min_num_charts << endl;
+      return min_num_charts;
+      /* cout << min_num_charts << endl; */
     } 
 };
 
 
 int main()
 {
-  Network net;
-  net.Data_Read(); 
-  net.print_result();
+  // For Test
+  /*
+    Reference:
+    convert int to string: https://stackoverflow.com/questions/5590381/easiest-way-to-convert-int-to-string-in-c
+    convert string to file name: https://stackoverflow.com/questions/36824225/use-string-or-array-of-char-for-filename
+    Redirect Standard Input and Output: https://stackoverflow.com/questions/5257509/freopen-equivalent-for-c-streams
+    C++ Files and Streams: https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm#:~:text=A%20file%20must%20be%20opened,file%20for%20reading%20purpose%20only.
+    getline: https://www.geeksforgeeks.org/getline-string-c/
+    Read from file line by line: https://stackoverflow.com/questions/7868936/read-file-line-by-line-using-ifstream-in-c
+    https://stackoverflow.com/questions/16777451/c-how-is-istream-is-converted-to-bool-inside-a-conditional-expression
+  */
+
+  int num_of_test;
+  for (int i(1); i <= num_of_test; i++)
+  {
+    string test_file;
+    string result_file;
+    int min_chart;
+    if(i <10)
+    {
+      test_file = "tests/0" + to_string(i);
+    }
+    else
+    {
+      test_file = "tests/" + to_string(i);
+    }
+    result_file = test_file + ".a";
+
+    freopen(test_file.c_str(), "r", stdin);  
+
+    std::ifstream infile(result_file.c_str());
+    std::string line;
+    while(std::getline(infile, line))
+    {
+      std::istringstream iss(line);
+      if (!(iss >> min_chart))
+      {
+	break; //error
+      }
+    }
+    Network net;
+    net.Data_Read(); 
+    int res = net.print_result();
+    if (res != min_chart)
+    {
+      cout << "Fails on test case " << i << endl;
+    }
+    else
+    {
+      cout << "Succeed!" << endl;
+    }
+  }
+
+
+  // For submission
+  /* Network net; */
+  /* net.Data_Read(); */ 
+  /* cout << net.print_result() << endl; */
 }
