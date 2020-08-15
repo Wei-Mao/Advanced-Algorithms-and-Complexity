@@ -9,5 +9,6 @@
 *.scala
 *.swo
 *.swp
+*.py
 
 
