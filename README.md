@@ -9,9 +9,9 @@ Solutions for Programming Assignments in C++ for **Advanced Algorithms and Compl
 [3 Advanced Problem: Stock Charts](https://github.com/Wei-Mao/Advanced-Algorithms-and-Complexity/tree/master/Week%201%20Flows%20in%20Networks/stock_charts)
 
 ## Week 2 Linear Programming
-[1 Problem: Infer Energy Values of Ingredients]()
+[1 Problem: Infer Energy Values of Ingredients](https://github.com/Wei-Mao/Advanced-Algorithms-and-Complexity/tree/master/Week%202%20Linear%20Programming/energy_values)
 
-[2 Problem: Optimal Diet Problem]()
+[2 Problem: Optimal Diet Problem](https://github.com/Wei-Mao/Advanced-Algorithms-and-Complexity/tree/master/Week%202%20Linear%20Programming/diet)
 
 [3 Advanced Problem: Online Advertisement Allocation]()
 
